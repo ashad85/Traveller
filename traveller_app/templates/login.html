@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traveller</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/image/favicon-32x32.png">
+    <style>
+        h1{
+            font-size: 10cqmax;
+            color: #fff;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            mix-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-luggage"></i> Traveller</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav nav-underline">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/trip">Trip</a>
+              </li>
+              <li class="nav-item">
+                {% if request.user.is_authenticated %}
+                  <a class="nav-link" href="/lgout">Logout</a>
+                {% else %}
+                  <a class="nav-link" href="/log">Login</a>
+                {% endif %}
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pro"><i class="bi bi-person-fill"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Section: Design Block -->
+    <section class="d-flex align-items-center justify-content-center vh-100" style="background-image: url(static/image/first.jpg); background-size: cover;">
+        <!-- Jumbotron -->
+        <div class="px-5 py-5 px-md-5 text-center text-lg-start" style="background: rgba(0, 0, 0, 0.3);">
+            <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h1 class="my-5 display-3 fw-bold ls-tight">
+                            <i class="bi bi-luggage"></i> Traveller
+                        </h1>
+                        <p style="color: #fff;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                        quibusdam tempora at cupiditate quis eum maiores libero
+                        veritatis? Dicta facilis sint aliquid ipsum atque?
+                        </p>
+                    </div>
+        
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="card">
+                            <div class="card-body py-5 px-md-5">
+                                <form method="POST">
+                                  {% csrf_token %} 
+                                    <h2>Log In</h2>
+                                    <hr>
+                                    {% if messages %}
+                                    <div class="alert alert-primary" role="alert">
+                                        
+                                        {% for message in messages %}
+                                        {{message}}
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example3"><i class="bi bi-person-fill"></i> User Name</label>
+                                        <input type="text" name="username" id="form3Example1" class="form-control" placeholder="User Name" />
+                                    </div>
+            
+                                    <!-- Password input -->
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example4"><i class="bi bi-key-fill"></i> Password</label>
+                                        <input type="password" name="password" id="form3Example2" class="form-control" placeholder="Password" />
+                                    </div>
+            
+                                    <!-- Submit button -->
+                                    <p>Don't have account ? <a href="/regist">Register</a></p>
+                                    <button type="submit" value="submit" class="btn btn-primary form-control">
+                                        Log In
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

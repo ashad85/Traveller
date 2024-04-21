@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traveller</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/image/favicon-32x32.png">
+    <style>
+        h1{
+            font-size: 10cqmax;
+            color: #fff;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            mix-blend-mode: overlay;
+        }
+        .one {
+            width: auto;
+            height: auto;
+            padding-top: 15%;
+            background-image: url(static/image/img1.jpg);
+            background-size: cover !important;
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><i class="bi bi-luggage"></i> Traveller</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav nav-underline">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/trip">Trip</a>
+              </li>
+              <li class="nav-item">
+                {% if request.user.is_authenticated %}
+                  <a class="nav-link" href="/lgout">Logout</a>
+                {% else %}
+                  <a class="nav-link" href="/log">Login</a>
+                {% endif %}
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pro"><i class="bi bi-person-fill"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap Static Header -->
+    <div class="one">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 font-weight-bold"><b><i class="bi bi-luggage"></i> Traveller</b></h1>
+            <p class="font-italic mb-0 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="/trip" role="button" class="btn btn-primary px-5">booking now</a>
+        </div>
+    </div>
+
+    <div class="row px-5 py-5">
+      <h3 class="px-3 py-3">Ladakh Trip Details</h3>
+      <div class="col-4">
+        <div id="list-example" class="list-group">
+          <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1: <i class="bi bi-building-fill"></i> Room </a>
+          <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2: <i class="bi bi-egg-fried"></i> Food</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3: <i class="bi bi-wifi"></i> Wifi</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4: <i class="bi bi-controller"></i> Event</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-5">Item 5: <i class="bi bi-universal-access"></i> Insurence</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-6">Item 6: <i class="bi bi-telephone-fill"></i> Customer Care</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-7">Item 7: <i class="bi bi-taxi-front"></i> Cab</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-8">Item 8: <i class="bi bi-credit-card"></i> Payment</a>
+        </div>
+      </div>
+      <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+          <h4 id="list-item-1">Item 1: <i class="bi bi-building-fill"></i> Room</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+          <h4 id="list-item-2">Item 2: <i class="bi bi-egg-fried"></i> Food</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+          <h4 id="list-item-3">Item 3: <i class="bi bi-wifi"></i> Wifi</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+          <h4 id="list-item-4">Item 4: <i class="bi bi-controller"></i> Event</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+          <h4 id="list-item-5">Item 5: <i class="bi bi-universal-access"></i> Insurence</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+          <h4 id="list-item-6">Item 6: <i class="bi bi-telephone-fill"></i> Customer Care</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+          <h4 id="list-item-7">Item 7: <i class="bi bi-taxi-front"></i> Cab</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+          <h4 id="list-item-8">Item 8: <i class="bi bi-credit-card"></i> Payment</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione repellendus laboriosam exercitationem magnam sequi blanditiis neque voluptas eaque ullam, explicabo quis, consectetur vero. Aut id et aspernatur, placeat harum omnis fugit! Voluptates aut quod cumque laudantium et? Quaerat velit possimus iusto maiores nihil sint hic nesciunt labore, facilis quibusdam!</p>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
